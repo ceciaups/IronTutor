@@ -9,7 +9,7 @@ export default function Header() {
           <li className="nav-item"><Link to="/">Home</Link></li>
           <li className="nav-item"><Link to="/about">About</Link></li>
           <li className="nav-item"><Link to="/courses">Courses</Link></li>
-          <li className="nav-item"><Link to="/inspriation">Inspiration</Link></li>
+          <li className="nav-item"><Link to="/inspiration">Inspiration</Link></li>
           <li className="nav-item"><Link to="/faq">FAQ</Link></li>
         </ul>
       </nav>
