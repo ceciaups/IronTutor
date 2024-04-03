@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/********************************************************************
+ * TABLE OF CONTENTS
+ * ===================
+ * 1. GENERAL STYLES
+ * 2. HEADER STYLES
+ * 3. HOME STYLES
+ * 4. ABOUT STYLES
+ * 5. PROJECTS STYLES
+ * 6. CONTACT STYLES
+ * 7. FOOTER STYLES
+ * 8. MEDIA QUERIES
+ * ===================
+ ********************************************************************/
+
+/* 1. GENERAL STYLES */
+html {
+  box-sizing: border-box;
+  height: 100%;
+  color: var(--gray090);
+  font-size: var(--size-s);
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  background-color: white;
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+h1 {
+  font-weight: 400;
+  font-size: var(--size-xxl);
+}
+h2 {
+  font-weight: 300;
+  letter-spacing: 0.2px;
+  font-size: var(--size-xl);
+}
+h3 {
+  font-weight: 300;
+  font-size: var(--size-l);
+}
+:root {
+  --size-xxl: 72px;
+  --size-xl: 40px;
+  --size-l: 28px;
+  --size-m: 22px;
+  --size-s: 20px;
+  --size-xs: 18px;
+  --size-xxs: 15px;
+  --page-margin: 80px;
+  --header-height: 195px;
+  --project-width: 216px;
+  --main-project-height: 502px;
+  --home-pros-width: 300px;
+  --home-location-width: 326px;
+  --home-location-height: 1000px;
+  --home-msg-height: 126px;
+  --flex-gap: 10px;
+  --gray000: #B7B7B7;
+  --gray010: #758B95;
+  --gray020: #567077;
+  --gray030: #6993A1;
+  --gray040: #898989;
+  --gray090: #0A0C0D;
+  --blue000: rgb(203, 239, 252, 0.7);
+  --blue010: #A0DEF8;
+  --blue020: #47C2F4;
+  --blue030: #1094c4;
+}
+
+/* 2. HEADER STYLES */
+header {
+  position: fixed;
+  height: var(--header-height);
+  width: 100vw;
+  display: flex;
+  flex-flow: column wrap;
+  gap: var(--flex-gap);
+  padding: var(--flex-gap) var(--page-margin);
+  align-content: center;
+  align-items: center;
+  background-color: white;
+  z-index: 1;
+  font-size: var(--size-m);
+}
+#logo {
+  height: 138px;
+  width: 138px;
+}
+.nav-item {
+  display: inline-block;
+  padding: 0 var(--flex-gap);
+}
+#header-contact {
+  position: absolute;
+  right: var(--page-margin);
+  bottom: 0;
+  text-align: right;
+  padding: var(--flex-gap) 0;
+}
+.header-social {
+  display: flex;
+  gap: var(--flex-gap);
+  justify-content: flex-end;
+}
+.header-small {
+  font-size: var(--size-s)
+}
+
+#info-wrapper {
+  position: absolute;
+  bottom: calc(var(--flex-gap) * 3);
+  right: calc(var(--flex-gap) * 3);
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: var(--blue000);
+  font-size: var(--size-m);
+  font-weight: 300;
+  line-height: 1.65;
+  padding: 0.5em;
+  border-radius: 20px;
+}
+
+/* 3. HOME STYLES */
+/* hero */
+main {
+  padding: var(--header-height) var(--page-margin) 0 var(--page-margin);
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+  background-color: white;
+}
+#hero-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 667px;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+.hero-image {
+  transform: translateZ(-10px) scale(2);
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.hero-text {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.hero-text h1 {
+  color: var(--blue030);
+  -webkit-text-stroke: 1px var(--gray090);
+}
+.hero-text button {
+  position: absolute;
+  bottom: 0;
+  left: calc(100% / 2 - 120px / 2);
+  font-size: var(--size-xxs);
+  font-weight: 200;
+  padding: calc(var(--size-s) / 2 + 2px) var(--size-s);
+  margin-bottom: 113px;
+  border: 1px solid var(--gray090);
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+/* info */
+#home-wrapper {
+  background-color: white;
+}
+#home-benefit {
+  display: flex;
+  flex-flow: column nowrap;
+  line-height: 1.65;
+  gap: calc(var(--size-xxs) * 2);
+  padding: calc(var(--size-xxs) * 4) 0;
+}
+#home-pros-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  gap: var(--size-xl);
+}
+.home-pros {
+  display: flex;
+  flex-flow: column nowrap;
+  width: calc((100% - var(--size-xl) * 2 ) / 3);
+  min-width: var(--home-pros-width);
+  gap: var(--size-xxs);
+}
+.home-pros img {
+  width: 100%;
+}
+.home-pros div {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--size-s);
+  height: 319px;
+  padding: calc(var(--size-xxs) * 2) 0;
+  background-color: var(--blue010);
+  line-height: 1.65;
+  font-size: var(--size-xs);
+}
+#home-location-heading {
+  padding: var(--size-m) 0 var(--size-xxs) 0;
+}
+#home-location-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.home-location {
+  width: calc(100% / 3);
+  min-width: var(--home-location-width);
+  height: var(--home-location-height);
+  padding: calc(var(--size-m) * 3) 0;
+  font-size: var(--size-xxs);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: var(--size-s);
+  line-height: 2;
+}
+.home-location-1, .home-location-3 {
+  background-color: var(--blue010);
+}
+.home-location-2 {
+  background-color: var(--gray000);
+}
+gmp-map {
+  width: var(--home-location-width);
+}
+
+/*contact form*/
+.home-form {
+  text-align: left;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--size-xs);
+}
+.home-form input,
+.home-form textarea {
+  font-size: var(--size-xxs);
+  color: black;
+  font-weight: 300;
+  font-family: "Lato", sans-serif;
+  border: 1px solid transparent;
+  border-bottom: 1px solid black;
+  height: 50px;
+  width: var(--home-pros-width);
+  padding: 4px;
+  transition: border 0s;
+}
+.home-form textarea {
+  height: var(--home-msg-height);
+  padding: 8px 4px;
+}
+.home-form input::placeholder,
+.home-form textarea::placeholder {
+  font-size: var(--size-xxs);
+  color: black;
+  font-weight: 300;
+  font-family: "Lato", sans-serif;
+}
+.home-form input:hover,
+.home-form input:focus,
+.home-form textarea:hover,
+.home-form textarea:focus {
+  border: 1px solid black;
+  transition: none;
+}
+.home-form-first {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: var(--flex-gap);
+}
+.home-form-first input {
+  width: calc((var(--home-pros-width) - var(--flex-gap)) / 2);
+}
+#fsubmit {
+  background: black;
+  border: none;
+  color: white;
+  font-size: var(--size-xs);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+#fsubmit:hover {
+  opacity: 0.6;
+}
+
+/* 4. ABOUT STYLES */
+
+
+/* 5. COURSES STYLES */
+
+
+/* 6. INSPRIRATION STYLES */
+
+
+/* 7. FAQ STYLES */
+
+
+/* 8. FOOTER STYLES */
+footer {
+  margin: var(--size-xl) 0;
+  font-size: var(--size-xxs);
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--size-l);
+  line-height: 1.75;
+}
+
+
+/* 9. MEDIA QUERIES */
