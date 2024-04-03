@@ -3,14 +3,14 @@ import {Link} from "react-router-dom";
 export default function Header() {
   return (
     <header>
-      <img id="logo" src="public/logo.png" alt="Iron Tutor's Logo"></img>
+      <Link id="logo" to="/"><img src="public/logo.png" alt="Iron Tutor's Logo"></img></Link>
       <nav>
         <ul id="nav-bar" className="nav-bar">
-          <li className="nav-item">Home</li>
-          <li className="nav-item">About</li>
-          <li className="nav-item">Courses</li>
-          <li className="nav-item">Inspiration</li>
-          <li className="nav-item">FAQ</li>
+          <li className="nav-item"><Link to="/">Home</Link></li>
+          <li className="nav-item"><Link to="/about">About</Link></li>
+          <li className="nav-item"><Link to="/courses">Courses</Link></li>
+          <li className="nav-item"><Link to="/inspriation">Inspiration</Link></li>
+          <li className="nav-item"><Link to="/faq">FAQ</Link></li>
         </ul>
       </nav>
       <div id="header-contact">

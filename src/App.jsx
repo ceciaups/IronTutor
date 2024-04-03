@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import React from 'react';
+import {BrowserRouter, Router, Routes, Route} from "react-router-dom";
 import './App.css'
 
 import Header from "./components/Header";
@@ -12,19 +13,17 @@ import Footer from "./components/Footer";
 import Popup from "./components/Popup";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header />
-      </BrowserRouter>
+      <Header />
       <main>
-        <Home />
-        <About />
-        <Courses />
-        <Inspiration />
-        <FAQ />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/inspiration" element={<Inspiration />} /> 
+          <Route path="/faq" element={<FAQ />} /> 
+        </Routes>
         <Footer />
       </main>
       <Popup />

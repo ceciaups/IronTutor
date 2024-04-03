@@ -52,6 +52,15 @@ h3 {
   font-weight: 300;
   font-size: var(--size-l);
 }
+a {
+  text-decoration: none;
+}
+a,
+a:hover,
+a:active,
+a:visited {
+  color: var(--gary090);
+}
 :root {
   --size-xxl: 72px;
   --size-xl: 40px;
@@ -99,6 +108,10 @@ header {
 #logo {
   height: 138px;
   width: 138px;
+}
+#logo img {
+  height: 100%;
+  width: 100%;
 }
 .nav-item {
   display: inline-block;
