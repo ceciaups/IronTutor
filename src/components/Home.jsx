@@ -3,13 +3,15 @@ import React from 'react';
 export default function Home() {
   return (
     <section id="sec-home">
-      <div id="hero-wrapper">
-        <img className="hero-image" src="public/home.jpg"/>
+      {/* <div id="hero-wrapper"> */}
+        <div id="hero-3d">
+          <img className="hero-image" src="public/home.jpg"/>
+        </div>
         <div className="hero-text">
           <h1>IRON TUTOR</h1>
           <button>Learn More</button>
         </div>
-      </div>
+      {/* </div> */}
       <div id="home-wrapper">
         <div id="home-benefit">
           <h2>BENEFITS OF STUDYING AT IRON TUTOR</h2>

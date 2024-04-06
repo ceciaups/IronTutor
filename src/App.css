@@ -26,7 +26,8 @@ html {
   text-align: center;
   background-color: white;
   scroll-behavior: smooth;
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 *, *::before, *::after {
   box-sizing: inherit;
@@ -77,6 +78,8 @@ a:visited {
   --home-location-width: 326px;
   --home-location-height: 1000px;
   --home-msg-height: 126px;
+  --about-width: 466px;
+  --about-height: 852px;
   --flex-gap: 10px;
   --gray000: #B7B7B7;
   --gray010: #758B95;
@@ -150,12 +153,14 @@ header {
 /* 3. HOME STYLES */
 /* hero */
 main {
+  position: relative;
   padding: var(--header-height) var(--page-margin) 0 var(--page-margin);
-  height: 100vh;
+  background-color: white;
+}
+#sec-home {
+  perspective: 10px;
   overflow-y: auto;
   overflow-x: hidden;
-  perspective: 10px;
-  background-color: white;
 }
 #hero-wrapper {
   position: relative;
@@ -163,19 +168,34 @@ main {
   justify-content: center;
   align-items: center;
   height: 667px;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#hero-3d {
+  position: absolute;
+  width: 100%;
+  height: 667px;
   transform-style: preserve-3d;
   z-index: -1;
 }
 .hero-image {
-  transform: translateZ(-10px) scale(2);
-  position: absolute;
+  /* transform: translateZ(-10px) scale(2); */
+  /* position: absolute;
+  top: 0; */
+  height: 100%;
   width: 100%;
   object-fit: cover;
   z-index: -1;
 }
 .hero-text {
+  position: relative;
+  height: 667px;
+  width: 100%;
   display: flex;
   flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 .hero-text h1 {
   color: var(--blue030);
@@ -319,7 +339,38 @@ gmp-map {
 }
 
 /* 4. ABOUT STYLES */
-
+#sec-about {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.about-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: var(--flex-gap);
+  justify-content: center;
+}
+.about {
+  width: calc((100% - var(--flex-gap)) / 2);
+  height: var(--about-height);
+}
+.about-info {
+  padding: var(--flex-gap);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: space-between;
+}
+.about-info-1 h2 {
+  margin: var(--size-m) 0;
+}
+.about-info-1 p {
+  width: var(--about-width);
+  text-align: left;
+  line-height: 1.3;
+  margin: 0 auto;
+}
+.about-small {
+  font-size: var(--size-xxs);
+}
 
 /* 5. COURSES STYLES */
 
