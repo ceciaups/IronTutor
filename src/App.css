@@ -137,7 +137,7 @@ header {
 }
 
 #info-wrapper {
-  position: absolute;
+  position: fixed;
   bottom: calc(var(--flex-gap) * 3);
   right: calc(var(--flex-gap) * 3);
   display: flex;
@@ -383,7 +383,7 @@ gmp-map {
 
 /* 8. FOOTER STYLES */
 footer {
-  margin: var(--size-xl) 0;
+  padding: var(--size-xl) 0;
   font-size: var(--size-xxs);
   display: flex;
   flex-flow: column nowrap;
