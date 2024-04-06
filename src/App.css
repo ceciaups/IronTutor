@@ -412,7 +412,9 @@ gmp-map {
 .courses-info * {
   width: var(--courses-width);
 }
-
+#courses-info-2 {
+  line-height: 1.75;
+}
 
 /* 6. INSPIRATION STYLES */
 
