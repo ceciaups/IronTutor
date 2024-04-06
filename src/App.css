@@ -82,7 +82,7 @@ a:visited {
   --about-height: 852px;
   --flex-gap: 10px;
   --gray000: #B7B7B7;
-  --gray010: #758B95;
+  --gray010: rgb(219, 219, 219, 0.2);
   --gray020: #567077;
   --gray030: #6993A1;
   --gray040: #898989;
@@ -153,11 +153,12 @@ header {
 /* 3. HOME STYLES */
 /* hero */
 main {
+  padding-top: var(--header-height);
   position: relative;
-  padding: var(--header-height) var(--page-margin) 0 var(--page-margin);
   background-color: white;
 }
 #sec-home {
+  padding: 0 var(--page-margin) 0 var(--page-margin);
   perspective: 10px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -348,16 +349,18 @@ gmp-map {
   flex-flow: row nowrap;
   gap: var(--flex-gap);
   justify-content: center;
+  padding: var(--size-xxs);
 }
 .about {
   width: calc((100% - var(--flex-gap)) / 2);
   height: var(--about-height);
 }
 .about-info {
+  background-color: var(--gray010);
   padding: var(--flex-gap);
   display: flex;
   flex-flow: column nowrap;
-  align-items: space-between;
+  justify-content: space-between;
 }
 .about-info-1 h2 {
   margin: var(--size-m) 0;
