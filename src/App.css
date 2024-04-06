@@ -80,7 +80,10 @@ a:visited {
   --home-msg-height: 126px;
   --about-width: 466px;
   --about-height: 852px;
+  --courses-height: 500px;
+  --courses-width: 462px;
   --flex-gap: 10px;
+  --courses-padding: 80px;
   --gray000: #B7B7B7;
   --gray010: rgb(219, 219, 219, 0.2);
   --gray020: #567077;
@@ -88,7 +91,7 @@ a:visited {
   --gray040: #898989;
   --gray090: #0A0C0D;
   --blue000: rgb(203, 239, 252, 0.7);
-  --blue010: #A0DEF8;
+  --blue010: rgb(203, 239, 252);
   --blue020: #47C2F4;
   --blue030: #1094c4;
 }
@@ -248,7 +251,7 @@ main {
   gap: var(--size-s);
   height: 319px;
   padding: calc(var(--size-xxs) * 2) 0;
-  background-color: var(--blue010);
+  background-color: var(--blue020);
   line-height: 1.65;
   font-size: var(--size-xs);
 }
@@ -272,7 +275,7 @@ main {
   line-height: 2;
 }
 .home-location-1, .home-location-3 {
-  background-color: var(--blue010);
+  background-color: var(--blue020);
 }
 .home-location-2 {
   background-color: var(--gray000);
@@ -376,6 +379,39 @@ gmp-map {
 }
 
 /* 5. COURSES STYLES */
+#sec-courses {
+  background-color: var(--gray010);
+  padding: var(--size-s);
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--size-xs);
+}
+.courses {
+  display: flex;
+  flex-flow: row nowrap;
+  height: var(--courses-height);
+  width: 100%;
+  padding: 0 var(--courses-padding);
+  gap: var(--size-xs);
+}
+.courses * {
+  width: calc((100% - var(--size-xs)) / 2);
+}
+.courses-info {
+  background-color: var(--blue010);
+  padding: 100px 0;
+  line-height: 2;
+  text-align: left;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--size-m);
+  font-size: var(--size-xs);
+}
+.courses-info * {
+  width: var(--courses-width);
+}
 
 
 /* 6. INSPIRATION STYLES */
