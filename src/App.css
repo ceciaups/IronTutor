@@ -82,8 +82,8 @@ a:visited {
   --about-height: 852px;
   --courses-height: 500px;
   --courses-width: 462px;
+  --quotes-width: 472px;
   --flex-gap: 10px;
-  --courses-padding: 80px;
   --gray000: #B7B7B7;
   --gray010: rgb(219, 219, 219, 0.2);
   --gray020: #567077;
@@ -386,12 +386,15 @@ gmp-map {
   flex-flow: column nowrap;
   gap: var(--size-xs);
 }
+#sec-courses h2 {
+  line-height: 1.65;
+}
 .courses {
   display: flex;
   flex-flow: row nowrap;
   height: var(--courses-height);
   width: 100%;
-  padding: 0 var(--courses-padding);
+  padding: 0 var(--page-margin);
   gap: var(--size-xs);
 }
 .courses * {
@@ -417,7 +420,31 @@ gmp-map {
 }
 
 /* 6. INSPIRATION STYLES */
-
+#sec-inspiration {
+  background-color: var(--gray010);
+  padding: var(--size-s);
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--size-xs);
+}
+#sec-inspiration h2 {
+  line-height: 1.65;
+}
+.quotes-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: var(--size-l);
+}
+.quotes {
+  width: var(--quotes-width);
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--size-l);
+}
+.quotes img {
+  width: 100%;
+}
 
 /* 7. FAQ STYLES */
 
