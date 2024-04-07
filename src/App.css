@@ -42,7 +42,7 @@ html {
 }
 h1 {
   font-weight: 400;
-  font-size: var(--size-xxl);
+  font-size: 72px;
 }
 h2 {
   font-weight: 300;
@@ -50,6 +50,10 @@ h2 {
   font-size: var(--size-xl);
 }
 h3 {
+  font-weight: 300;
+  font-size: 35px;
+}
+h4 {
   font-weight: 300;
   font-size: var(--size-l);
 }
@@ -63,7 +67,7 @@ a:visited {
   color: var(--gary090);
 }
 :root {
-  --size-xxl: 72px;
+  --size-xxl: 68px;
   --size-xl: 40px;
   --size-l: 28px;
   --size-m: 22px;
@@ -83,6 +87,7 @@ a:visited {
   --courses-height: 500px;
   --courses-width: 462px;
   --quotes-width: 472px;
+  --faq-width: 780px;
   --flex-gap: 10px;
   --gray000: #B7B7B7;
   --gray010: rgb(219, 219, 219, 0.2);
@@ -447,7 +452,27 @@ gmp-map {
 }
 
 /* 7. FAQ STYLES */
-
+#sec-faq {
+  background-color: var(--gray010);
+  padding: var(--size-xxl);
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--size-xxl);
+  align-items: center;
+  line-height: 1.65;
+}
+.faq {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--flex-gap);
+}
+.faq-question {
+  text-align: left;
+  width: var(--faq-width);
+}
+.faq p {
+  font-size: var(--size-xs);
+}
 
 /* 8. FOOTER STYLES */
 footer {
@@ -458,6 +483,5 @@ footer {
   gap: var(--size-l);
   line-height: 1.75;
 }
-
 
 /* 9. MEDIA QUERIES */

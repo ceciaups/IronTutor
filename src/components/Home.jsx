@@ -21,21 +21,21 @@ export default function Home() {
           <div className="home-pros home-pros1">
             <img src="public/home1.jpg" alt="Improved Results"/>
             <div>
-              <h3>Improved Results</h3>
+              <h4>Improved Results</h4>
               <p>The Alumni of our Academy not only<br/>go to major renowned<br/>Universities/Colleges in North<br/>America, they're more prepared and<br/>transitioned better into the next level<br/>due to the solid foundation they have<br/>built through us.</p>
             </div>
           </div>
           <div className="home-pros home-pros2">
             <img src="public/home2.jpg" alt="Friendly Staff"/>
             <div>
-              <h3>Friendly Staff</h3>
+              <h4>Friendly Staff</h4>
               <p>All of our staff are academically<br/>strong and caring. We are excited to<br/>help with any questions, so feel free<br/>to seek assistance.</p>
             </div>
           </div>
           <div className="home-pros home-pros3">
             <img src="public/home3.jpg" alt="Trusted Teaching Methods"/>
             <div>
-              <h3>Trusted Teaching Methods</h3>
+              <h4>Trusted Teaching Methods</h4>
               <p>Our mission is to provide simplified<br/>but efficient lessons that maintain all<br/>the necessary detail of every course.<br/>We build a customized plan to best<br/>fit the learning curve htmlFor every<br/>student. WE BELIEVE NO ONE IS<br/>EXACTLY THE SAME.</p>
             </div>
           </div>
