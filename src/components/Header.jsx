@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 export default function Header() {
   return (
     <header>
-      <Link id="logo" to="/"><img src="public/logo.png" alt="Iron Tutor's Logo"></img></Link>
+      <Link id="logo" to="/"><img src="logo.png" alt="Iron Tutor's Logo"></img></Link>
       <nav>
         <ul id="nav-bar" className="nav-bar">
           <li className="nav-item"><Link to="/">Home</Link></li>

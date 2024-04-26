@@ -1,17 +1,34 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 
 export default function Home() {
+  const [heroStyle, setheroStyle] = useState({});
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    const heroTop = position * 0.5;
+    const heroStyle = {
+      top: heroTop
+    }
+    setheroStyle(heroStyle);
+  };
+  
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <section id="sec-home">
-      {/* <div id="hero-wrapper"> */}
-        <div id="hero-3d">
-          <img className="hero-image" src="public/home.jpg"/>
-        </div>
-        <div className="hero-text">
+      {/* <div className="hero-wrapper"> */}
+      {/* </div> */}
+      <div className="hero-text">
+        <img className="hero-image" src="home.jpg"/>
+        <div>
           <h1>IRON TUTOR</h1>
           <button>Learn More</button>
         </div>
-      {/* </div> */}
+      </div>
       <div id="home-wrapper">
         <div id="home-benefit">
           <h2>BENEFITS OF STUDYING AT IRON TUTOR</h2>
@@ -19,21 +36,21 @@ export default function Home() {
         </div>
         <div id="home-pros-wrapper">
           <div className="home-pros home-pros1">
-            <img src="public/home1.jpg" alt="Improved Results"/>
+            <img src="home1.jpg" alt="Improved Results"/>
             <div>
               <h4>Improved Results</h4>
               <p>The Alumni of our Academy not only<br/>go to major renowned<br/>Universities/Colleges in North<br/>America, they're more prepared and<br/>transitioned better into the next level<br/>due to the solid foundation they have<br/>built through us.</p>
             </div>
           </div>
           <div className="home-pros home-pros2">
-            <img src="public/home2.jpg" alt="Friendly Staff"/>
+            <img src="home2.jpg" alt="Friendly Staff"/>
             <div>
               <h4>Friendly Staff</h4>
               <p>All of our staff are academically<br/>strong and caring. We are excited to<br/>help with any questions, so feel free<br/>to seek assistance.</p>
             </div>
           </div>
           <div className="home-pros home-pros3">
-            <img src="public/home3.jpg" alt="Trusted Teaching Methods"/>
+            <img src="home3.jpg" alt="Trusted Teaching Methods"/>
             <div>
               <h4>Trusted Teaching Methods</h4>
               <p>Our mission is to provide simplified<br/>but efficient lessons that maintain all<br/>the necessary detail of every course.<br/>We build a customized plan to best<br/>fit the learning curve htmlFor every<br/>student. WE BELIEVE NO ONE IS<br/>EXACTLY THE SAME.</p>

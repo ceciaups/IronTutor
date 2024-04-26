@@ -9,9 +9,9 @@ export default function About() {
           </div>
           <p className="about-small">Contact us at 416-299-9769 or info@irontutor.com if you want to<br/>be part of our study group.</p>
         </div>
-        <img className="about about-info-2" src="public/about1.jpg" alt="Environment of Iron Tutor office"/>
+        <img className="about about-info-2" src="about1.jpg" alt="Environment of Iron Tutor office"/>
       </div>
-      <img src="public/about.jpg" alt="Environment of Iron Tutor office"/>
+      <img src="about.jpg" alt="Environment of Iron Tutor office"/>
     </section>
   )
 }

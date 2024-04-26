@@ -6,14 +6,14 @@ export default function Inspiration() {
       <h2>Inspiring Quotes</h2>
       <div className="quotes-wrapper">
         <div className="quotes quotes-left">
-          <img src="public/steve.jpg"/>
-          <img src="public/tom.png"/>
-          <img src="public/quote.jpg"/>
+          <img src="steve.jpg"/>
+          <img src="tom.png"/>
+          <img src="quote.jpg"/>
         </div>
         <div className="quotes quotes-right">
-          <img src="public/albert.jpg"/>
-          <img src="public/alan.jpg"/>
-          <img src="public/ali.jpg"/>
+          <img src="albert.jpg"/>
+          <img src="alan.jpg"/>
+          <img src="ali.jpg"/>
         </div>
       </div>
     </section>
