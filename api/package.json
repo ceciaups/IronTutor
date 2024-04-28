@@ -1,7 +1,7 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "Ceci Au's Portfolio",
+  "description": "iron-tutor",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ceciaups/Portfolio.git"
+    "url": "git+https://github.com/ceciaups/iron-tutor.git"
   },
   "author": "Ceci Pui Sze Au",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ceciaups/Portfolio/issues"
+    "url": "https://github.com/ceciaups/iron-tutor/issues"
   },
-  "homepage": "https://github.com/ceciaups/Portfolio#readme",
+  "homepage": "https://github.com/ceciaups/iron-tutor#readme",
   "devDependencies": {
     "nodemon": "^2.0.22"
   },
