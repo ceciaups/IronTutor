@@ -200,7 +200,7 @@ main {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  transform: translateZ(-400px) scale(2);
+  /* transform: translateZ(-400px) scale(2); */
   z-index: -1;
 }
 .hero-text {
@@ -305,7 +305,8 @@ gmp-map {
   gap: var(--size-xs);
 }
 .home-form input,
-.home-form textarea {
+.home-form textarea,
+.home-form button {
   font-size: var(--size-xxs);
   color: black;
   font-weight: 300;

@@ -1,22 +1,38 @@
 import { React, useState, useEffect } from 'react';
 
 export default function Home() {
-  const [heroStyle, setheroStyle] = useState({});
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    const heroTop = position * 0.5;
-    const heroStyle = {
-      top: heroTop
-    }
-    setheroStyle(heroStyle);
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+
+  const sendMail = (e) => {
+    e.preventDefault();
+    const contactForm = e.target;
+    let formData = new FormData();
+
+    formData.append("fname", contactForm.fname.value);
+    formData.append("femail", contactForm.femail.value);
+    formData.append("fphone", contactForm.fphone.value);
+    formData.append("fsubject", contactForm.fsubject.value);
+    formData.append("fschool", contactForm.fschool.value);
+    formData.append("fmsg", contactForm.fmsg.value);
+
+    fetch("https://iron-tutor.vercel.app/api/send", {
+      method: "post",
+      mode: 'cors',
+      body: formData
+    })
+      .then(res => {
+        if (res.status === 200)
+          console.log("Email sent!");
+        else if (res.status === 500)
+          console.log("Failed to send email!");
+      })
+      .catch(error => {
+        console.log("Failed to call server!");
+      });
+
+    return false;
   };
-  
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (
     <section id="sec-home">
@@ -105,15 +121,15 @@ export default function Home() {
           </div>
           <div className="home-location home-location-3">
             <h2>CONTACT US</h2>
-            <form className="home-form">
+            <form onSubmit={sendMail} className="home-form">
               <div className="home-form-first">
                 <div>
                   <label htmlFor="fname">Name *</label><br/>
-                  <input type="text" id="fname" name="fname" placeholder="Enter your name" required/>
+                  <input type="text" id="fname" name="fname" placeholder="Enter your name" require="true"/>
                 </div>
                 <div>
                   <label htmlFor="femail">Email *</label><br/>
-                  <input type="text" id="femail" name="femail" placeholder="Enter your email" required/>
+                  <input type="text" id="femail" name="femail" placeholder="Enter your email" require="true"/>
                 </div>
               </div>
               <div>
@@ -132,7 +148,7 @@ export default function Home() {
                 <label htmlFor="fmsg">Message</label><br/>
                 <textarea id="fmsg" name="fmsg" placeholder="Type your message here..."></textarea>
               </div>
-              <input id="fsubmit" type="submit" value="Submit"/>
+              <button id="fsubmit" type="submit">Submit</button>
             </form>
           </div>
         </div>

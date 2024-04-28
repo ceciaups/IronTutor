@@ -7,7 +7,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 dotenv.config();
 
-app.use(cors({origin: "https://ceciaups.vercel.app"}));
+app.use(cors({origin: "https://iron-tutor.vercel.app"}));
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -35,10 +35,13 @@ app.post("/api/send", (req, res) => {
     const mail = {
       from: process.env.GMAIL,
       to: process.env.GMAIL,
-      subject: '[Portfolio] New Form submission',
-      text: `You have received a new message from ${data.fname} \n` +
+      subject: `New Form submission from ${data.fname}`,
+      text: `Name: ${data.fname} \n` +
       `Email: <${data.femail}> \n` + 
-      `Here is the message: ${data.fmessage}`,
+      `Phone: ${data.fmessage} \n` + 
+      `Subject and Grade: ${data.fsubject} \n` + 
+      `School: ${data.fschool} \n` + 
+      `Message: ${data.fmsg}`,
     };
     transporter.sendMail(mail, (err, data) => {
       if (err) {
