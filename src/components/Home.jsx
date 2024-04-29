@@ -1,9 +1,12 @@
-import { React, useState, useEffect } from 'react';
-import GoogleMapReact from 'google-map-react';
-// import process from "dotenv";
+import { React, useState, useRef } from 'react';
+import {APIProvider, Map, AdvancedMarker} from '@vis.gl/react-google-maps';
 
 export default function Home() {
   const apiGOOGLE = import.meta.env.VITE_GOOGLE;
+  const mapRef = useRef(null);
+  const [mapReady, setMapReady] = useState(false);
+
+  console.log(apiGOOGLE);
   
   const scarLoc = {
     center: {
@@ -111,8 +114,13 @@ export default function Home() {
               416-299-9769
             </p>
             <div style={{ height: '326px', width: '326px' }}>
-              <GoogleMapReact bootstrapURLKeys={{ key: apiGOOGLE }} defaultCenter={scarLoc.center} defaultZoom={scarLoc.zoom}>
-              </GoogleMapReact>
+              <APIProvider apiKey={apiGOOGLE}>
+                <Map zoom={scarLoc.zoom} center={{lat: scarLoc.center.lat, lng: scarLoc.center.lng}} mapId={"108996cce625c7cf"}>
+                  {/* <AdvancedMarker position={{lat: scarLoc.center.lat, lng: scarLoc.center.lng}}>
+                  </AdvancedMarker> */}
+                  <AdvancedMarker position={{lat: scarLoc.center.lat, lng: scarLoc.center.lng}}></AdvancedMarker>
+                </Map>
+              </APIProvider>
             </div>
           </div>
           <div className="home-location home-location-2">
@@ -133,8 +141,15 @@ export default function Home() {
               416-299-9769
             </p>
             <div style={{ height: '326px', width: '326px' }}>
-              <GoogleMapReact bootstrapURLKeys={{ key: apiGOOGLE }} defaultCenter={markLoc.center} defaultZoom={markLoc.zoom}>
-              </GoogleMapReact>
+              <APIProvider apiKey={apiGOOGLE}>
+                <Map zoom={markLoc.zoom} center={{lat: markLoc.center.lat, lng: markLoc.center.lng}} mapId={"108996cce625c7cf"}>
+                  {/* <AdvancedMarker position={{lat: markLoc.center.lat, lng: markLoc.center.lng}}>
+                  </AdvancedMarker> */}
+                  <AdvancedMarker position={{lat: markLoc.center.lat, lng: markLoc.center.lng}}></AdvancedMarker>
+                </Map>
+              </APIProvider>
+              {/* <GoogleMapReact bootstrapURLKeys={{ key: apiGOOGLE }} defaultCenter={markLoc.center} defaultZoom={markLoc.zoom}>
+              </GoogleMapReact> */}
             </div>
           </div>
           <div className="home-location home-location-3">
