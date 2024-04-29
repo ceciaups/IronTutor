@@ -5,8 +5,6 @@ export default function Home() {
   const apiGOOGLE = import.meta.env.VITE_GOOGLE;
   const mapRef = useRef(null);
   const [mapReady, setMapReady] = useState(false);
-
-  console.log(apiGOOGLE);
   
   const scarLoc = {
     center: {
