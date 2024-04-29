@@ -1,8 +1,24 @@
 import { React, useState, useEffect } from 'react';
+import GoogleMapReact from 'google-map-react';
+// import process from "dotenv";
 
 export default function Home() {
-  const [email, setEmail] = useState('');
-  const [error, setError] = useState('');
+  const apiGOOGLE = import.meta.env.VITE_GOOGLE;
+  
+  const scarLoc = {
+    center: {
+      lat: 43.803672790527344,
+      lng: -79.28881072998047
+    },
+    zoom: 14
+  };
+  const markLoc = {
+    center: {
+      lat: 43.853912353515625,
+      lng: -79.33819580078125
+    },
+    zoom: 14
+  };
 
   const sendMail = (e) => {
     e.preventDefault();
@@ -94,9 +110,10 @@ export default function Home() {
               info@irontutor.com<br/>
               416-299-9769
             </p>
-            {/* <gmp-map center="43.803672790527344,-79.28881072998047" zoom="14" map-id="DEMO_MAP_ID">
-              <gmp-advanced-marker position="43.803672790527344,-79.28881072998047" title="My location"></gmp-advanced-marker>
-            </gmp-map> */}
+            <div style={{ height: '326px', width: '326px' }}>
+              <GoogleMapReact bootstrapURLKeys={{ key: apiGOOGLE }} defaultCenter={scarLoc.center} defaultZoom={scarLoc.zoom}>
+              </GoogleMapReact>
+            </div>
           </div>
           <div className="home-location home-location-2">
             <h2>Markham</h2>
@@ -115,9 +132,10 @@ export default function Home() {
               info@irontutor.com<br/>
               416-299-9769
             </p>
-            {/* <gmp-map center="43.853912353515625,-79.33819580078125" zoom="14" map-id="DEMO_MAP_ID">
-              <gmp-advanced-marker position="43.853912353515625,-79.33819580078125" title="My location"></gmp-advanced-marker>
-            </gmp-map> */}
+            <div style={{ height: '326px', width: '326px' }}>
+              <GoogleMapReact bootstrapURLKeys={{ key: apiGOOGLE }} defaultCenter={markLoc.center} defaultZoom={markLoc.zoom}>
+              </GoogleMapReact>
+            </div>
           </div>
           <div className="home-location home-location-3">
             <h2>CONTACT US</h2>

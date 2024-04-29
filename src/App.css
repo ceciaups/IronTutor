@@ -293,9 +293,10 @@ main {
 .home-location-2 {
   background-color: var(--gray000);
 }
-gmp-map {
+/* GoogleMapReact {
   width: var(--home-location-width);
-}
+  height: var(--home-location-width);
+} */
 
 /*contact form*/
 .home-form {
