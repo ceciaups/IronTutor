@@ -1,11 +1,15 @@
-import { React, useState, useRef } from 'react';
-import {APIProvider, Map, AdvancedMarker} from '@vis.gl/react-google-maps';
+import { React, useState, useRef, useCallback } from 'react';
+import { Link } from "react-router-dom";
+import {APIProvider, Map, AdvancedMarker, InfoWindow, useAdvancedMarkerRef, useMap} from '@vis.gl/react-google-maps';
 
 export default function Home() {
   const apiGOOGLE = import.meta.env.VITE_GOOGLE;
-  const mapRef = useRef(null);
-  const [mapReady, setMapReady] = useState(false);
-  
+  const scarDir = "https://www.google.com/maps/dir/?api=1&destination=4168%20Finch%20Ave%20E,%20Scarborough,%20ON%20M1S%203V1,%20Canada";
+  const markDir = "https://www.google.com/maps/dir/?api=1&destination=3601%20Hwy%207,%20Markham,%20ON%20L3R%200M3,%20Canada";
+  const [scarMarkerRef, scarMarker] = useAdvancedMarkerRef();
+  const [markMarkerRef, markMarker] = useAdvancedMarkerRef();
+  const [scarShown, setScarShown] = useState(true);
+  const [markShown, setMarkShown] = useState(true);
   const scarLoc = {
     center: {
       lat: 43.803672790527344,
@@ -19,6 +23,26 @@ export default function Home() {
       lng: -79.33819580078125
     },
     zoom: 14
+  };
+  const [scarOffset, setScarOffset] = useState(scarLoc.center.lat + 0.004);
+  const [markOffset, setMarkOffset] = useState(markLoc.center.lat + 0.003);
+  
+  const scarHandleMarkerClick = () => {
+    setScarShown(isShown => !isShown);
+    setScarOffset(scarLoc.center.lat + 0.004);
+  };
+  const markHandleMarkerClick = () => {
+    setMarkShown(isShown => !isShown);
+    setMarkOffset(markLoc.center.lat + 0.003);
+  };
+
+  const scarHandleClose = () => {
+    setScarShown(false);
+    setScarOffset(scarLoc.center.lat);
+  };
+  const markHandleClose = () => {
+    setMarkShown(false);
+    setMarkOffset(markLoc.center.lat);
   };
 
   const sendMail = (e) => {
@@ -111,12 +135,17 @@ export default function Home() {
               info@irontutor.com<br/>
               416-299-9769
             </p>
-            <div style={{ height: '326px', width: '326px' }}>
+            <div className="home-google">
               <APIProvider apiKey={apiGOOGLE}>
-                <Map zoom={scarLoc.zoom} center={{lat: scarLoc.center.lat, lng: scarLoc.center.lng}} mapId={"108996cce625c7cf"}>
-                  {/* <AdvancedMarker position={{lat: scarLoc.center.lat, lng: scarLoc.center.lng}}>
-                  </AdvancedMarker> */}
-                  <AdvancedMarker position={{lat: scarLoc.center.lat, lng: scarLoc.center.lng}}></AdvancedMarker>
+                <Map defaultZoom={scarLoc.zoom} center={{lat: scarOffset, lng: scarLoc.center.lng}} mapId={"108996cce625c7cf"}>
+                  <AdvancedMarker ref={scarMarkerRef} position={{lat: scarLoc.center.lat, lng: scarLoc.center.lng}} id="scarMarker" onClick={scarHandleMarkerClick}/>
+                  {scarShown && (
+                  <InfoWindow anchor={scarMarker} onCloseClick={scarHandleClose}>
+                    <p className="home-google-infowindow"><b>Scarborough Location</b></p>
+                    <p className="home-google-infowindow">Suite PH75-76 First<br/>Commercial Place (第一廣場)<br/>4168 Finch Ave. East Toronto,<br/>Ontario M1S 5H6</p>
+                    <Link className="home-google-infowindow" target="_blank" to={scarDir}>Direction</Link>
+                  </InfoWindow>
+                  )}
                 </Map>
               </APIProvider>
             </div>
@@ -138,16 +167,19 @@ export default function Home() {
               info@irontutor.com<br/>
               416-299-9769
             </p>
-            <div style={{ height: '326px', width: '326px' }}>
+            <div className="home-google">
               <APIProvider apiKey={apiGOOGLE}>
-                <Map zoom={markLoc.zoom} center={{lat: markLoc.center.lat, lng: markLoc.center.lng}} mapId={"108996cce625c7cf"}>
-                  {/* <AdvancedMarker position={{lat: markLoc.center.lat, lng: markLoc.center.lng}}>
-                  </AdvancedMarker> */}
-                  <AdvancedMarker position={{lat: markLoc.center.lat, lng: markLoc.center.lng}}></AdvancedMarker>
+                <Map defaultZoom={markLoc.zoom} center={{lat: markOffset, lng: markLoc.center.lng}} mapId={"108996cce625c7cf"}>
+                  <AdvancedMarker ref={markMarkerRef} position={{lat: markLoc.center.lat, lng: markLoc.center.lng}} onClick={markHandleMarkerClick}/>
+                  {markShown && (
+                  <InfoWindow anchor={markMarker} onCloseClick={markHandleClose}>
+                    <p className="home-google-infowindow"><b>Markham Location</b></p>
+                    <p className="home-google-infowindow">Unit 1103, 3601 Hwy 7 East,<br/>Markham, Ontario, L3R 0M3</p>
+                    <Link className="home-google-infowindow" target="_blank" to={markDir}>Direction</Link>
+                  </InfoWindow>
+                  )}
                 </Map>
               </APIProvider>
-              {/* <GoogleMapReact bootstrapURLKeys={{ key: apiGOOGLE }} defaultCenter={markLoc.center} defaultZoom={markLoc.zoom}>
-              </GoogleMapReact> */}
             </div>
           </div>
           <div className="home-location home-location-3">

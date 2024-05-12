@@ -293,10 +293,20 @@ main {
 .home-location-2 {
   background-color: var(--gray000);
 }
-/* GoogleMapReact {
-  width: var(--home-location-width);
-  height: var(--home-location-width);
-} */
+.map-marker {
+  padding: 12px;
+  background-color: white;
+  border-radius: 8px;
+}
+.home-google {
+  height: 326px;
+  width: 326px;
+}
+.home-google-infowindow {
+  text-align: left;
+  display: inline-block;
+  width: 100%;
+}
 
 /*contact form*/
 .home-form {
