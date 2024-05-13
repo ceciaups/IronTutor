@@ -425,6 +425,9 @@ main {
 .courses * {
   width: calc((100% - var(--size-xs)) / 2);
 }
+.courses img {
+  object-fit: cover;
+}
 .courses-info {
   background-color: var(--blue010);
   padding: 100px 0;
