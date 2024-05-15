@@ -7,7 +7,7 @@ export default function Inspiration() {
       <div className="quotes-wrapper">
         <div className="quotes quotes-left">
           <img src="steve.jpg"/>
-          <img src="tom.png"/>
+          <img src="thomas.png"/>
           <img src="quote.jpg"/>
         </div>
         <div className="quotes quotes-right">
