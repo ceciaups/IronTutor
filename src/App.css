@@ -89,15 +89,15 @@ a:visited {
   --quotes-width: 472px;
   --faq-width: 780px;
   --flex-gap: 10px;
-  --gray000: #B7B7B7;
-  --gray010: rgb(219, 219, 219, 0.2);
+  --gray000: #fafafa;
+  --gray010: #f4f4f4;
   --gray020: #567077;
   --gray030: #6993A1;
   --gray040: #898989;
   --gray090: #0A0C0D;
-  --blue000: rgb(203, 239, 252, 0.7);
-  --blue010: rgb(203, 239, 252);
-  --blue020: #A0DEF8;
+  --blue000: rgb(212, 241, 253, 0.7);
+  --blue010: #d4f1fd;
+  --blue020: #aae3fa;
   --blue030: #1094c4;
 }
 
@@ -262,7 +262,7 @@ main {
   display: flex;
   flex-flow: column nowrap;
   gap: var(--size-s);
-  height: 319px;
+  height: 100%;
   padding: calc(var(--size-xxs) * 2) 0;
   background-color: var(--blue020);
   line-height: 1.65;
@@ -291,7 +291,7 @@ main {
   background-color: var(--blue020);
 }
 .home-location-2 {
-  background-color: var(--gray000);
+  background-color: var(--gray010);
 }
 .map-marker {
   padding: 12px;
@@ -299,13 +299,12 @@ main {
   border-radius: 8px;
 }
 .home-google {
-  height: 326px;
-  width: 326px;
+  height: var(--home-location-width);
+  width: var(--home-location-width);
 }
 .home-google-infowindow {
   text-align: left;
   display: inline-block;
-  width: 100%;
 }
 
 /*contact form*/
@@ -384,7 +383,7 @@ main {
   height: var(--about-height);
 }
 .about-info {
-  background-color: var(--gray010);
+  background-color: var(--gray000);
   padding: var(--flex-gap);
   display: flex;
   flex-flow: column nowrap;
@@ -405,7 +404,7 @@ main {
 
 /* 5. COURSES STYLES */
 #sec-courses {
-  background-color: var(--gray010);
+  background-color: var(--gray000);
   padding: var(--size-s);
   display: flex;
   flex-flow: column nowrap;
@@ -449,7 +448,7 @@ main {
 
 /* 6. INSPIRATION STYLES */
 #sec-inspiration {
-  background-color: var(--gray010);
+  background-color: var(--gray000);
   padding: var(--size-s);
   display: flex;
   flex-flow: column nowrap;
@@ -476,7 +475,7 @@ main {
 
 /* 7. FAQ STYLES */
 #sec-faq {
-  background-color: var(--gray010);
+  background-color: var(--gray000);
   padding: var(--size-xxl);
   display: flex;
   flex-flow: column nowrap;
@@ -508,3 +507,32 @@ footer {
 }
 
 /* 9. MEDIA QUERIES */
+@media screen and (max-width: 1140px) {
+  :root {
+  --size-xxl: 54px;
+  --size-xl: 32px;
+  --size-l: 22px;
+  --size-m: 18px;
+  --size-s: 16px;
+  --size-xs: 14px;
+  --size-xxs: 12px;
+  --page-margin: 64px;
+  --header-height: 156px;
+  --project-width: 172px;
+  --main-project-height: 400px;
+  --home-pros-width: 240px;
+  --home-location-width: 275px;
+  --home-location-height: 800px;
+  --home-msg-height: 100px;
+  --about-width: 372px;
+  --about-height: 682px;
+  --courses-height: 400px;
+  --courses-width: 370px;
+  --quotes-width: 378px;
+  --faq-width: 624px;
+  --flex-gap: 8px;
+  }
+  .home-google-infowindow {
+    zoom: 0.7;
+  }
+}

@@ -142,7 +142,7 @@ export default function Home() {
                   {scarShown && (
                   <InfoWindow anchor={scarMarker} onCloseClick={scarHandleClose}>
                     <p className="home-google-infowindow"><b>Scarborough Location</b></p>
-                    <p className="home-google-infowindow">Suite PH75-76 First<br/>Commercial Place (第一廣場)<br/>4168 Finch Ave. East Toronto,<br/>Ontario M1S 5H6</p>
+                    <p className="home-google-infowindow">Suite PH75-76 First Commercial Place (第一廣場), 4168 Finch Ave. East,<br/>Toronto, Ontario M1S 5H6</p>
                     <Link className="home-google-infowindow" target="_blank" to={scarDir}>Direction</Link>
                   </InfoWindow>
                   )}
