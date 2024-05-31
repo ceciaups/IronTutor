@@ -81,6 +81,7 @@ a:visited {
   --home-pros-width: 300px;
   --home-location-width: 326px;
   --home-location-height: 1000px;
+  --home-marker-height: 47px;
   --home-msg-height: 126px;
   --about-width: 466px;
   --about-height: 852px;
@@ -302,8 +303,13 @@ main {
   height: var(--home-location-width);
   width: var(--home-location-width);
 }
+.gm-ui-hover-effect {
+  position: absolute !important;
+  right: 0;
+}
 .home-google-infowindow {
   text-align: left;
+  width: 100%;
   display: inline-block;
 }
 
@@ -533,6 +539,6 @@ footer {
   --flex-gap: 8px;
   }
   .home-google-infowindow {
-    zoom: 0.7;
+    /* zoom: 0.7; */
   }
 }

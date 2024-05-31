@@ -139,6 +139,13 @@ export default function Home() {
               <APIProvider apiKey={apiGOOGLE}>
                 <Map defaultZoom={scarLoc.zoom} center={{lat: scarOffset, lng: scarLoc.center.lng}} mapId={"108996cce625c7cf"}>
                   <AdvancedMarker ref={scarMarkerRef} position={{lat: scarLoc.center.lat, lng: scarLoc.center.lng}} id="scarMarker" onClick={scarHandleMarkerClick}/>
+                  {/* <AdvancedMarker ref={scarMarkerRef} position={{lat: scarLoc.center.lat, lng: scarLoc.center.lng}} id="scarInfo">
+                    <div className="home-google-infowindow">
+                      <p><b>Scarborough Location</b></p>
+                      <p>Suite PH75-76 First Commercial Place (第一廣場), 4168 Finch Ave. East,<br/>Toronto, Ontario M1S 5H6</p>
+                      <Link target="_blank" to={scarDir}>Direction</Link>
+                    </div>
+                  </AdvancedMarker> */}
                   {scarShown && (
                   <InfoWindow anchor={scarMarker} onCloseClick={scarHandleClose}>
                     <p className="home-google-infowindow"><b>Scarborough Location</b></p>
